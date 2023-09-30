@@ -29,12 +29,12 @@ int main(void)
     // Get map image data to be used for collision detection
     Color *mapPixels = LoadImageColors(imMap);
     UnloadImage(imMap);                                                           // Unload image from RAM
-    Texture2D bill = LoadTexture("resources/billboardH.png");                     // Our Herring texture
-    Vector3 enemyPosition = {-16.0f, -2.0f, -7.0f};                               // Position of Herring
+    Texture2D bill = LoadTexture("resources/billboardA.png");                     // Our Hmonster texture
+    Vector3 enemyPosition = {-16.0f, -2.0f, -7.0f};                               // Position of Hmonster
     Vector3 mapPosition = {-16.0f, 0.0f, -7.0f};                                   // Set model position
     Rectangle source = {-16.0f, -7.0f, (float)bill.width, (float)bill.height};
 
-    Texture2D adam = LoadTexture("resources/billboardA.png");                      // zadam texture
+    Texture2D adam = LoadTexture("resources/billboard.png");                      // zadam texture
     Vector3 enemy2Position = {-16.0f, -2.0f, -7.0f};
     float enemy2Speed = .01f;
     bool enemy2Frozen = false;                                                     // Flag to indicate whether the semite is frozen or not
@@ -163,7 +163,7 @@ int main(void)
 
         BeginMode3D(camera);
         DrawModel(model, mapPosition, 1.0f, WHITE);                                  // Draw maze map
-        DrawBillboardRec(camera, bill, source, enemyPosition, (Vector2){2.0f, 2.0f}, WHITE); // Draw enemy (Herring)
+        DrawBillboardRec(camera, bill, source, enemyPosition, (Vector2){2.0f, 2.0f}, WHITE); // Draw enemy (Hmonster)
         DrawBillboardRec(camera, adam, source, enemy2Position, (Vector2){2.0f, 2.0f}, WHITE);  // Draw enemy (Adam)
         EndMode3D();
 
